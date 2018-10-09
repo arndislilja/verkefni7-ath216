@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Open Sans', helvetica, arial, sans-serif;
+  font-size: 16px;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1450px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.text {
+  margin-bottom: 20px;
+}
+
+.text p {
+  margin-bottom: 20px;
+}
+
+.image {
+  max-width: 100%;
+  margin-bottom: 20px;
+  flex-direction: row;
+}
+
+.grid {
+  display: flex;
+  flex: 1;
+}
+
+.grid__row {
+  display: flex;
+  flex-direction: column;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.grid__col {
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.image {
+  max-width: 100%;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+.grid__row1 {
+  display: flex;
+  flex-direction: row;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.grid__col2 {
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/* TODO setja upp grid fyrir >= 1000px */
+
+/* TODO koma mynd fyrir á öðrum stað í < 1000px */
+
+/* grid fyrir cards */
+
+
+/* TODO útfæra grid fyrir cards */
+
+/*
+  .card kemur óbreytt úr sýnilausn á verkefni 5 fyrir utan responsive stíla og
+  að það fær `height: 100%;`
+  Sýnilausn verður gefin út við lok dags miðvikudaginn 3. okt
+*/
+
+/* TODO .card stílar úr v5 (eða sýnilausn...) */
+
+/* TODO responsive stílar fyrir .card */
+
+/*Mitt verkefni 5*/
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  background: #eee;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 470px;
+  max-height: 300px;
+  overflow: hidden;
+
+  background-color: #fff;
+  border: 2px solid #aaa;
+  border-radius: 5px;
+}
+
+.card__title {
+  margin-bottom: 20px;
+
+  font-size: 1.375em;
+  line-height: 1;
+  word-break: break-word;
+}
+
+.card__content {
+  display: flex;
+  flex: 1;
+}
+
+.card__text {
+  font-size: 1em;
+  line-height: 1.375;
+  overflow: auto;
+  word-break: break-word;
+}
+
+.card__image {
+  padding-left: 20px;
+  flex: 0 0 150px;
+}
+
+.card__img {
+  max-width: 100%;
+}
+
+.card__tags {
+  margin-top: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  list-style: none;
+}
+
+.card__tag {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+@media only screen and (min-width: 500px) {
+  .grid__row {
+    columns: 100%;
+    column-count: 1;
+  }
+  .grid__col {
+    columns: 100%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .cards {
+    width: 50%;
+    margin-bottom: 40px;
+  } 
+}
+
+@media (mix-width: 999px) {
+  .grid__row:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+  .grid__col:nth-child(2) {
+    order: -1;
+  }
+}
+
+@media (max-width: 1490px) {
+  .main {
+    padding: 0;
+  }
+}
