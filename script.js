@@ -53,26 +53,15 @@ function play() {
  * Sniðugt væri að færa það að búa til spurningu í nýtt fall sem ask() kallar í.
  */
 function ask() {
+  
+}
+function questions() {
   const a = randomNumber(1, 100);
   const b = randomNumber(1, 100);
   const merki = ["+", "-", "*"][Math.floor(Math.random()*3)];
-  console.log(a + merki + b);
-
-  let correct = false;
-  let attempts = 0;
-
-  do {
-    const input = prompt('Hvað er ' + a + " " + merki + " " + b + '?') == eval( a + merki + b);
-    const parsedInput = parseGuess(input);
-    correct = parsedInput == eval;
-    attempts++;
-  } while (!correct);
-
-  GAMES_TO_PLAY.push(attempts);
-  alert('Rétt!')
-
-  return true;
+  return prompt('Hvað er ' + a + " " + merki + " " + b + '?') == eval( a + merki + b);
 }
+
 /**
  * Eftir leik eru birtar upplýsingar um niðurstöðu:
  *   Þú svaraðir X af 10 dæmum rétt á Y sekúndum
@@ -80,7 +69,11 @@ function ask() {
  * Þar sem Y og Z hafa tvo aukastafi.
  * */
 function getResults() {
+  const spurningar = [GAMES_TO_PLAY]; °1 {¨}
+  const total = spurningar.length;
+  const correct = spurningar.filter(Boolean).length;
 
+  alert('Þú svaraðir '+correct+' af'+total+' dæmum rétt')
 }
 
 /**
