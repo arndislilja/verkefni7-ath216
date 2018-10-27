@@ -13,8 +13,14 @@ const GAMES_TO_PLAY = 10;
  * Eftir leik er notanda boðið að spila annan leik, ef ekki hættir forrit.
  */
 function start() {
-  villa;
-}
+  window.confirm("Viltu spila einn leik?")
+  if (confirm("Ef já, veldu þá OK!")) {
+    txt = "Þú valdir JÁ!";
+  } else {
+    txt = "Þú valdir NEI :(";
+  }
+  }
+ play();
 
 /**
  * Spilar einn leik. Heldur utan um hvenær leikur byrjaði, hvenær endar og
@@ -45,6 +51,14 @@ function play() {
  * Sniðugt væri að færa það að búa til spurningu í nýtt fall sem ask() kallar í.
  */
 function ask() {
+  const daemi1 = randomNumber(100) + randomNumber(100);
+
+  const input = prompt('Reiknaðu dæmið tölurnar geta verið báðar á bilinu 1 - 100');
+
+  alert('Rétt svar')
+
+  alert(random);
+
 }
 
 /**
@@ -55,4 +69,6 @@ function randomNumber(min, max) {
 }
 
 // Byrjar leik
+alert('Velkomin í leikinn');
+
 start();
