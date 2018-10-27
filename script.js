@@ -13,14 +13,15 @@ const GAMES_TO_PLAY = 10;
  * Eftir leik er notanda boðið að spila annan leik, ef ekki hættir forrit.
  */
 function start() {
-  window.confirm("Viltu spila einn leik?")
-  if (confirm("Ef já, veldu þá OK!")) {
-    txt = "Þú valdir JÁ!";
-  } else {
-    txt = "Þú valdir NEI :(";
-  }
-  }
+  confirm("Viltu spila einn leik?");
+
+do { 
  play();
+} while (confirm('Viltu spila annan leik?'));
+
+alert(getResults());
+
+}
 
 /**
  * Spilar einn leik. Heldur utan um hvenær leikur byrjaði, hvenær endar og
@@ -34,6 +35,7 @@ function start() {
  *
  */
 function play() {
+  ask();
 }
 
 /**
@@ -51,13 +53,33 @@ function play() {
  * Sniðugt væri að færa það að búa til spurningu í nýtt fall sem ask() kallar í.
  */
 function ask() {
-  const daemi1 = randomNumber(100) + randomNumber(100);
+  const a = randomNumber(1, 100);
+  const b = randomNumber(1, 100);
+  const merki = ["+", "-", "*"][Math.floor(Math.random()*3)];
+  console.log(a + merki + b);
 
-  const input = prompt('Reiknaðu dæmið tölurnar geta verið báðar á bilinu 1 - 100');
+  let correct = false;
+  let attempts = 0;
 
-  alert('Rétt svar')
+  do {
+    const input = prompt('Hvað er ' + a + " " + merki + " " + b + '?') == eval( a + merki + b);
+    const parsedInput = parseGuess(input);
+    correct = parsedInput == eval;
+    attempts++;
+  } while (!correct);
 
-  alert(random);
+  GAMES_TO_PLAY.push(attempts);
+  alert('Rétt!')
+
+  return true;
+}
+/**
+ * Eftir leik eru birtar upplýsingar um niðurstöðu:
+ *   Þú svaraðir X af 10 dæmum rétt á Y sekúndum
+ *   Meðalrétt svör á sekúndu eru Z
+ * Þar sem Y og Z hafa tvo aukastafi.
+ * */
+function getResults() {
 
 }
 
