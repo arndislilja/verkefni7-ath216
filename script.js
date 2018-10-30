@@ -13,6 +13,7 @@ const GAMES_TO_PLAY = 10;
  * Eftir leik er notanda boðið að spila annan leik, ef ekki hættir forrit.
  */
 function start() {
+  alert('Velkomin í leikinn, í dag ætlum við að reikna 10 stærðfræðidæmi eins hratt og mögulegt er! Víj!');
   confirm("Viltu spila einn leik?");
 
 do { 
@@ -57,9 +58,21 @@ function ask() {
   
 }
 function questions() {
-  const fylki = [q1(), q2(), q3()];
+  /* const fylki = [q1(), q2(), q3()];
   const hand = fylki[Math.floor(Math.random()*fylki.length)];
-  return hand;
+
+  return hand;*/
+  q1();
+  q2();
+  q3();
+  q1();
+  q2();
+  q3();
+  q1();
+  q2();
+  q3();
+  q1();
+
 }
 function q1() {
   const a = randomNumber(1, 100);
@@ -88,7 +101,7 @@ function q3() {
  * Þar sem Y og Z hafa tvo aukastafi.
  * */
 function getResults() {
-  const spurningar = 3;
+  const spurningar = 10;
   const total = spurningar.length;
   const correct = spurningar.filter(Boolean).length;
 
@@ -103,6 +116,5 @@ function randomNumber(min, max) {
 }
 
 // Byrjar leik
-alert('Velkomin í leikinn');
 
 start();
