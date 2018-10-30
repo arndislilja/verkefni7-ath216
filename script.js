@@ -35,9 +35,7 @@ alert(getResults());
  *
  */
 function play() {
-  do {
     ask();
-  } while 
 }
 
 /**
@@ -55,17 +53,32 @@ function play() {
  * Sniðugt væri að færa það að búa til spurningu í nýtt fall sem ask() kallar í.
  */
 function ask() {
-  questions();
+    questions();
   
 }
 function questions() {
+  const fylki = [q1(), q2(), q3()];
+  const hand = fylki[Math.floor(Math.random()*fylki.length)];
+  return hand;
+}
+function q1() {
   const a = randomNumber(1, 100);
   const b = randomNumber(1, 100);
-  const c = randomNumber(2, 10);
-  const d = randomNumber(2, 10);
-  const merki = ["+", "-", "*"][Math.floor(Math.random()*3)];
-const deiling = ["/"][Math.floor(Math.random()*1)];
-return prompt('Hvað er ' + a + " " + merki + " " + b + '?') == eval( a + merki + b) || 'Hvað er ' + c + " " + deiling + " " + c * d + '?' == eval(c + deiling + c * d);
+  const merki = ["+", "-"][Math.floor(Math.random()*2)];
+  return prompt('Hvað er ' + a + " " + merki + " " + b + '?') == eval(a + merki + b);
+
+}
+function q2() {
+  const c = randomNumber(1, 10);
+  const d = randomNumber(1, 10);
+  const sinnum = ["*"];
+  return prompt('Hvað er ' + c + " " + sinnum + " " + d + '?') == eval(c + sinnum + d);
+}
+function q3() {
+  const e = randomNumber(2, 10);
+  const f = randomNumber(2, 10);
+  const deiling = ["/"];
+  return prompt('Hvað er ' + e + " " + deiling + " " + e * f + '?') ==eval(e + deiling + e * f);
 }
 
 /**
@@ -75,7 +88,7 @@ return prompt('Hvað er ' + a + " " + merki + " " + b + '?') == eval( a + merki 
  * Þar sem Y og Z hafa tvo aukastafi.
  * */
 function getResults() {
-  const spurningar = [GAMES_TO_PLAY];
+  const spurningar = 3;
   const total = spurningar.length;
   const correct = spurningar.filter(Boolean).length;
 
