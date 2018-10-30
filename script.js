@@ -35,7 +35,9 @@ alert(getResults());
  *
  */
 function play() {
-  ask();
+  do {
+    ask();
+  } while 
 }
 
 /**
@@ -53,13 +55,17 @@ function play() {
  * Sniðugt væri að færa það að búa til spurningu í nýtt fall sem ask() kallar í.
  */
 function ask() {
+  questions();
   
 }
 function questions() {
   const a = randomNumber(1, 100);
   const b = randomNumber(1, 100);
+  const c = randomNumber(2, 10);
+  const d = randomNumber(2, 10);
   const merki = ["+", "-", "*"][Math.floor(Math.random()*3)];
-  return prompt('Hvað er ' + a + " " + merki + " " + b + '?') == eval( a + merki + b);
+const deiling = ["/"][Math.floor(Math.random()*1)];
+return prompt('Hvað er ' + a + " " + merki + " " + b + '?') == eval( a + merki + b) || 'Hvað er ' + c + " " + deiling + " " + c * d + '?' == eval(c + deiling + c * d);
 }
 
 /**
@@ -69,11 +75,11 @@ function questions() {
  * Þar sem Y og Z hafa tvo aukastafi.
  * */
 function getResults() {
-  const spurningar = [GAMES_TO_PLAY]; °1 {¨}
+  const spurningar = [GAMES_TO_PLAY];
   const total = spurningar.length;
   const correct = spurningar.filter(Boolean).length;
 
-  alert('Þú svaraðir '+correct+' af'+total+' dæmum rétt')
+  alert('Þú svaraðir '+correct+' af'+total+' dæmum rétt');
 }
 
 /**
